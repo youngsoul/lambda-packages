@@ -11,6 +11,9 @@ Various popular libraries, pre-compiled to be compatible with AWS Lambda
 
 ```python
 from lambda_packages import lambda_packages
-print lambda_packages['psycopg2']['version'] # 2.6.1
-print lambda_packages['psycopg2']['path'] # /home/YourUsername/.venvs/lambda_packages/psycopg2/psycopg2-2.6.1.tar.gz
+
+print lambda_packages['psycopg2']['version'] 
+# 2.6.1
+print lambda_packages['psycopg2']['path'] 
+# /home/YourUsername/.venvs/lambda_packages/psycopg2/psycopg2-2.6.1.tar.gz
 ```
