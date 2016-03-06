@@ -3,8 +3,8 @@ Various popular libraries, pre-compiled to be compatible with AWS Lambda.
 
 Currently includes support for:
 
-    * MySQL-Python
-    * psycopg2
+* MySQL-Python
+* psycopg2
 
 ## Installation
 
@@ -29,7 +29,7 @@ To add support for more packages, send a pull request containing a gzipped tarba
 
 Useful targets include:
 
-    * MongoEngine
-    * pandas
-    * PIL
-    * scipy
+* MongoEngine
+* pandas
+* PIL
+* scipy
