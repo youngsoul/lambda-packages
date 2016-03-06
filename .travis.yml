@@ -9,3 +9,5 @@ install:
  - "pip install nose"
 # command to run tests
 script: nosetests
+notifications:
+  slack: zappateam:TTJ0mfHunDK0IBweKkEXjGpR
