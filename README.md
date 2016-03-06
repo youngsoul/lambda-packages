@@ -7,7 +7,7 @@ Various popular libraries, pre-compiled to be compatible with AWS Lambda.
 
 ## Usage
 
-''lambda-packages'' also includes a manifest with information about the included packages and the paths to their binaries.
+**lambda-packages** also includes a manifest with information about the included packages and the paths to their binaries.
 
 ```python
 from lambda_packages import lambda_packages
