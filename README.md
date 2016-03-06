@@ -25,7 +25,7 @@ print lambda_packages['psycopg2']['path']
 
 ## Contributing
 
-To add support for more packages, send a pull request containing a gzipped tarball of the package (build on Amazon Linux and tested on AWS Lambda) in the appropriate directory and an updated manifest.
+To add support for more packages, send a pull request containing a gzipped tarball of the package (build on Amazon Linux and tested on AWS Lambda) in the appropriate directory, an updated manifest, and deterministic build instructions for creating the archive.
 
 Useful targets include:
 
