@@ -3,7 +3,7 @@
 postgreSQL 9.5.1
 psycopg2 2.6.1
 
-Instructions (via [Dr-Z0idberg](https://www.reddit.com/r/aws/comments/3on09a/using_psycopg2_in_lambda/cw4s94n)):
+Instructions (via [jkehler](https://github.com/jkehler/awslambda-psycopg2)):
 
 * Downloaded the Postgresql 9.4.3 source code and extracted it.
 * Downloaded the psycopg2 source and extracted it.
