@@ -46,8 +46,8 @@ cd Pillow-3.1.1/ && tar -zcvf ../Pillow-3.1.1.tar.gz * && cd ..
 
 #make lambda test
 cd Pillow-3.1.1/
-wget https://raw.githubusercontent.com/jDmacD/lambda-packages/master/lambda_packages/Pillow/test.jpg
-wget https://raw.githubusercontent.com/jDmacD/lambda-packages/master/lambda_packages/Pillow/test.py
+wget https://raw.githubusercontent.com/jDmacD/lambda-packages/master/lambda_packages/Pillow/test/test.jpg
+wget https://raw.githubusercontent.com/jDmacD/lambda-packages/master/lambda_packages/Pillow/test/test.py
 zip -r9 ../test.zip * && cd ..
 
 #aws s3 cp test.zip s3://<YOUR BUCKET>/test.zip --region <YOUR REGION>
