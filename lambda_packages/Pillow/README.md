@@ -1,3 +1,18 @@
+##Preperation
+
+If you want the finished Pillow `3.1.1.tar.gz` and `test.zip` sent to a bucket after it is created, please set the `bucket` and `region` variables at the top of the script:
+
+```
+
+dir="pillow-build"
+bucket="<YOUR BUCKET>"
+region="<YOUR REGION>"
+
+```
+Optionally, you can also set a directory.
+The EC2 instance will need the correct IAM role to perform this action.
+
+
 ##Build
 
 Report from `pip install --verbose --use-wheel pillow`
@@ -25,25 +40,9 @@ platform     linux2 2.7.10 (default, Dec  8 2015, 18:25:23)
 
 You can build your own by adding `build.sh` to Instance Details > Advanced Details > User Data field in the EC2 launch dashboard.
 
-If you want the finished tar sent to a bucket after it is created, please uncomment this line:
-
-```
-aws s3 cp Pillow-3.1.1.tar.gz s3://<YOUR BUCKET>/Pillow-3.1.1.tar.gz --region <YOUR REGION>
-
-```
-
-Replacing `<YOUR BUCKET>` and `<YOUR REGION>` with the appropriate details. The EC2 instance will need the correct IAM role to perform this action.
-
 ##Unit Test
 
-The `build.sh` will also build a `test.zip` including `test.py` and `test.jpg` for unit testing on Lambda. Please uncomment this line:
-
-```
-aws s3 cp test.zip s3://<YOUR BUCKET>/test.zip --region <YOUR REGION>
-
-```
-
-Replacing `<YOUR BUCKET>` and `<YOUR REGION>` with the appropriate details. The EC2 instance will need the correct IAM role to perform this action.
+The `build.sh` will also build a `test.zip` including `test.py` and `test.jpg` for unit testing on Lambda.
 
 Create a Lambda function using your prefered method. Dashboard example:
 
@@ -66,9 +65,7 @@ Exectuting the default test event should return the following:
 
 ##About
 
-Authored by James MacDonald
-
-[Github](https://github.com/jDmacD)
+Authored by [James MacDonald](https://github.com/jDmacD)
 
 The MIT License (MIT)
 

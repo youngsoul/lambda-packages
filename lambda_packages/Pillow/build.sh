@@ -3,6 +3,10 @@
 set -ex
 set -o pipefail
 
+prefix="pillow-build"
+bucket="<YOUR BUCKET>"
+region="<YOUR REGION>"
+
 echo "do update"
 yum update -y
 
@@ -50,5 +54,9 @@ wget https://raw.githubusercontent.com/jDmacD/lambda-packages/master/lambda_pack
 wget https://raw.githubusercontent.com/jDmacD/lambda-packages/master/lambda_packages/Pillow/test/test.py
 zip -r9 ../test.zip * && cd ..
 
-#aws s3 cp test.zip s3://<YOUR BUCKET>/test.zip --region <YOUR REGION>
-#aws s3 cp Pillow-3.1.1.tar.gz s3://<YOUR BUCKET>/Pillow-3.1.1.tar.gz --region <YOUR REGION>
+if [ "$bucket" != "<YOUR BUCKET>" ] && [ "$region" != "<YOUR REGION>" ]
+	then
+		echo "uploading to $bucket in $region"
+		aws s3 cp test.zip s3://$bucket/$dir/test.zip --region $region
+		aws s3 cp Pillow-3.1.1.tar.gz s3://$bucket/$dir/Pillow-3.1.1.tar.gz --region $region
+fi
