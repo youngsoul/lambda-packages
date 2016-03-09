@@ -44,9 +44,7 @@ You can build your own by adding `build.sh` to Instance Details > Advanced Detai
 
 The `build.sh` will also build a `test.zip` including `test.py` and `test.jpg` for unit testing on Lambda.
 
-Create a Lambda function using your prefered method. Dashboard example:
-
-![Lambda Configuration](test/testconfig.PNG)
+Create a Lambda function using your prefered method.
 
 Exectuting the default test event should return the following:
 
