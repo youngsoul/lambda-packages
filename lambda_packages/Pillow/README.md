@@ -34,7 +34,7 @@ aws s3 cp Pillow-3.1.1.tar.gz s3://<YOUR BUCKET>/Pillow-3.1.1.tar.gz --region <Y
 
 Replacing `<YOUR BUCKET>` and `<YOUR REGION>` with the appropriate details. The EC2 instance will need the correct IAM role to perform this action.
 
-##Test
+##Unit Test
 
 The `build.sh` will also build a `test.zip` including `test.py` and `test.jpg` for unit testing on Lambda. Please uncomment this line:
 
@@ -48,3 +48,18 @@ Replacing `<YOUR BUCKET>` and `<YOUR REGION>` with the appropriate details. The 
 Create a Lambda function using your prefered method. Dashboard example:
 
 ![Lambda Configuration](testconfig.PNG)
+
+Exectuting the default test event should return the following:
+
+```json
+
+{
+  "size": {
+    "width": 864,
+    "height": 648
+  },
+  "mode": "RGB",
+  "format": "JPEG"
+}
+
+```
