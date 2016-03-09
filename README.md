@@ -5,6 +5,7 @@ Currently includes support for:
 
 * MySQL-Python
 * psycopg2
+* Pillow (PIL) 
 
 This project is intended for use by [Zappa](https://github.com/Miserlou/Zappa), but could also be used by any Python/Lambda project.
 
@@ -33,5 +34,5 @@ Useful targets include:
 
 * MongoEngine
 * pandas
-* PIL
 * scipy
+* [scikit-learn](https://serverlesscode.com/post/deploy-scikitlearn-on-lamba/)
