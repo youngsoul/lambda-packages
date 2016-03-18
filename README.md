@@ -36,3 +36,4 @@ Useful targets include:
 * pandas
 * scipy
 * [scikit-learn](https://serverlesscode.com/post/deploy-scikitlearn-on-lamba/)
+* LXML 
