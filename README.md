@@ -37,3 +37,4 @@ Useful targets include:
 * scipy
 * [scikit-learn](https://serverlesscode.com/post/deploy-scikitlearn-on-lamba/)
 * LXML 
+* [OpenCV](https://github.com/Plastic-1/aws-lambda-python-opencv) 
