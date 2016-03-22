@@ -4,6 +4,8 @@ Various popular libraries, pre-compiled to be compatible with AWS Lambda.
 Currently includes support for:
 
 * MySQL-Python
+* numpy 
+* OpenCV 
 * psycopg2
 * Pillow (PIL) 
 

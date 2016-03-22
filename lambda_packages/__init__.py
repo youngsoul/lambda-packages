@@ -2,9 +2,17 @@ import os
 
 # A manifest of the included packages.
 lambda_packages = {
+    'cv2': {
+        'version': '3.1.0',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'OpenCV', 'OpenCV-3.1.0.tar.gz')
+    },
     'MySQL-Python': {
         'version': '1.2.5',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'MySQL-Python', 'MySQL-Python-1.2.5.tar.gz')
+    },
+    'numpy': {
+        'version': '1.10.4',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'numpy', 'numpy-1.10.4.tar.gz')
     },
     'psycopg2': {
         'version': '2.6.1',
