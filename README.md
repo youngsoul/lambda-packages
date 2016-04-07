@@ -1,3 +1,5 @@
+![Logo](http://i.imgur.com/AlmKP2q.png)
+
 # lambda-packages [![Build Status](https://travis-ci.org/Miserlou/lambda-packages.svg)](https://travis-ci.org/Miserlou/lambda-packages) [![Slack](https://img.shields.io/badge/chat-slack-ff69b4.svg)](https://slackautoinviter.herokuapp.com/)
 Various popular libraries, pre-compiled to be compatible with AWS Lambda.
 
