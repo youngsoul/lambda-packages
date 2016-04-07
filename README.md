@@ -17,6 +17,8 @@ This project is intended for use by [Zappa](https://github.com/Miserlou/Zappa), 
 
 ## Usage
 
+To use the packages with your projects, put the contents of the .tar.gz archive into your lambda .zip.
+
 **lambda-packages** also includes a manifest with information about the included packages and the paths to their binaries.
 
 ```python
