@@ -14,6 +14,7 @@ Currently includes support for:
 * OpenCV 
 * psycopg2
 * Pillow (PIL) 
+* LXML 
 
 This project is intended for use by [Zappa](https://github.com/Miserlou/Zappa), but could also be used by any Python/Lambda project.
 
@@ -46,4 +47,3 @@ Useful targets include:
 * pandas
 * scipy
 * [scikit-learn](https://serverlesscode.com/post/deploy-scikitlearn-on-lamba/)
-* LXML 
