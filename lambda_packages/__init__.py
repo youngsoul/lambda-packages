@@ -25,5 +25,10 @@ lambda_packages = {
     'psycopg2': {
         'version': '2.6.1',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'psycopg2', 'psycopg2-2.6.1.tar.gz')
-    }
+    },
+    'Crypto': {
+        'version': '2.6.1',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             'pycrypto', 'pycrypto-2.6.1.tar.gz')
+    },
 }
