@@ -14,6 +14,7 @@ Currently includes support for:
 * psycopg2
 * Pillow (PIL) 
 * LXML 
+* PyCrypto 
 
 This project is intended for use by [Zappa](https://github.com/Miserlou/Zappa), but could also be used by any Python/Lambda project.
 
