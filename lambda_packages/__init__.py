@@ -31,4 +31,14 @@ lambda_packages = {
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                              'pycrypto', 'pycrypto-2.6.1.tar.gz')
     },
+    'cffi': {
+        'version': '1.7.0',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             'cffi', 'cffi-1.7.0.tar.gz')
+    },
+    'pynacl': {
+        'version': '1.0.1',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             'PyNaCl', 'PyNaCl-1.0.1.tar.gz')
+    }
 }
