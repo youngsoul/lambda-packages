@@ -2,6 +2,11 @@ import os
 
 # A manifest of the included packages.
 lambda_packages = {
+    'cffi': {
+        'version': '1.7.0',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             'cffi', 'cffi-1.7.0.tar.gz')
+    },
     'cv2': {
         'version': '3.1.0',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'OpenCV', 'OpenCV-3.1.0.tar.gz')
@@ -30,11 +35,6 @@ lambda_packages = {
         'version': '2.6.1',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                              'pycrypto', 'pycrypto-2.6.1.tar.gz')
-    },
-    'cffi': {
-        'version': '1.7.0',
-        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                             'cffi', 'cffi-1.7.0.tar.gz')
     },
     'pynacl': {
         'version': '1.0.1',
