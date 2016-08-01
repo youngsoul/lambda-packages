@@ -15,6 +15,8 @@ Currently includes support for:
 * Pillow (PIL) 
 * LXML 
 * PyCrypto 
+* PyNaCl
+* cffi 
 
 This project is intended for use by [Zappa](https://github.com/Miserlou/Zappa), but could also be used by any Python/Lambda project.
 
