@@ -45,6 +45,8 @@ print lambda_packages['psycopg2']['path']
 
 To add support for more packages, send a pull request containing a gzipped tarball of the package (build on Amazon Linux and tested on AWS Lambda) in the appropriate directory, an updated manifest, and deterministic build instructions for creating the archive.
 
+You may find the [build.sh script](https://github.com/Miserlou/lambda-packages/blob/master/lambda_packages/cryptography/build.sh) useful as a starting point. 
+
 Useful targets include:
 
 * MongoEngine
