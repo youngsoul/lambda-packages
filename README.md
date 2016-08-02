@@ -17,7 +17,8 @@ Currently includes support for:
 * LXML 
 * PyCrypto 
 * PyNaCl
-* cffi 
+* cryptography
+* cffi
 
 This project is intended for use by [Zappa](https://github.com/Miserlou/Zappa), but could also be used by any Python/Lambda project.
 
