@@ -62,3 +62,6 @@ target/
 .ipynb_checkpoints
 
 .DS_Store
+
+#Emacs backups
+*~
