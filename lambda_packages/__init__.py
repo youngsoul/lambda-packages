@@ -45,5 +45,10 @@ lambda_packages = {
         'version': '1.4',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                              'cryptography', 'cryptography-1.4.tar.gz')
+    },
+    'pyproj': {
+        'version': '1.9.5',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 
+                             'pyproj', 'pyproj.4-4.9.2.tar.gz')
     }
 }
