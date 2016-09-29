@@ -20,6 +20,7 @@ pip install --upgrade pip
 
 pip install pyproj
 TARGET_DIR=$HOME/packaged
-cd $HOME/env/lib64/python2.7/site-packages/pyproj
+mkdir -p ${TARGET_DIR}
+cd $HOME/env/lib64/python2.7/site-packages
 tar -zcvf ${TARGET_DIR}/pyproj.4-4.9.2.tar.gz *
 deactivate
