@@ -50,5 +50,10 @@ lambda_packages = {
         'version': '1.9.5',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 
                              'pyproj', 'pyproj.4-4.9.2.tar.gz')
+    },
+    'bcrypt': {
+        'version': '3.1.1',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             'bcrypt', 'bcrypt-3.1.1.tar.gz')
     }
 }
