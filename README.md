@@ -30,7 +30,7 @@ This project is intended for use by [Zappa](https://github.com/Miserlou/Zappa), 
 
 ## Usage
 
-The best way to use these packages is with [Zappa](https://github.com/Miserlou/Zappa), which will automatically install the right packages during deployment, and do a million other useful things. Whatever you're currently trying to do on Lambda, it'll be way easier for you if you just use Zappa right now. Trust me. It's awesome.
+The best way to use these packages is with [Zappa](https://github.com/Miserlou/Zappa), which will automatically install the right packages during deployment, and do a million other useful things. Whatever you're currently trying to do on Lambda, it'll be way easier for you if you just use Zappa right now. Trust me. It's awesome. As a bonus, Zappa now also provides support for [manylinux wheels](https://blog.zappa.io/posts/zappa-adds-support-for-manylinux-wheels), which adds support for hundreds of other packages.
 
 But, if you want to use this project the other (wrong) way, just put the contents of the .tar.gz archive into your lambda .zip.
 
