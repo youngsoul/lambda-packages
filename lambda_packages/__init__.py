@@ -24,8 +24,8 @@ lambda_packages = {
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'numpy', 'numpy-1.10.4.tar.gz')
     },
     'Pillow': {
-        'version': '3.1.1',
-        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Pillow', 'Pillow-3.1.1.tar.gz')
+        'version': '3.4.2',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Pillow', 'Pillow-3.4.2.tar.gz')
     },
     'psycopg2': {
         'version': '2.6.1',
