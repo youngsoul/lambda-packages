@@ -15,6 +15,10 @@ lambda_packages = {
         'version': '3.6.0',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lxml', 'lxml-3.6.0.tar.gz')
     },
+    'misaka': {
+        'version': '2.0.0',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'misaka', 'misaka-2.0.0.tar.gz')
+    },
     'MySQL-Python': {
         'version': '1.2.5',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'MySQL-Python', 'MySQL-Python-1.2.5.tar.gz')
