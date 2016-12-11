@@ -13,6 +13,7 @@ Currently includes support for:
 * cffi
 * cryptography
 * LXML
+* misaka
 * MySQL-Python
 * numpy
 * OpenCV
