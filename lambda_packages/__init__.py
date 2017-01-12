@@ -6,7 +6,7 @@ lambda_packages = {
         'version': '3.1.1',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                             'bcrypt', 'bcrypt-3.1.1.tar.gz')
-    }.
+    },
     'cffi': {
         'version': '1.7.0',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
