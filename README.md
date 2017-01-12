@@ -22,6 +22,7 @@ Currently includes support for:
 * PyCrypto
 * PyNaCl
 * pyproj
+* regex
 
 This project is intended for use by [Zappa](https://github.com/Miserlou/Zappa), but could also be used by any Python/Lambda project.
 

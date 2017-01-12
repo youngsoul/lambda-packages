@@ -2,10 +2,20 @@ import os
 
 # A manifest of the included packages.
 lambda_packages = {
+    'bcrypt': {
+        'version': '3.1.1',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             'bcrypt', 'bcrypt-3.1.1.tar.gz')
+    }.
     'cffi': {
         'version': '1.7.0',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                              'cffi', 'cffi-1.7.0.tar.gz')
+    },
+    'cryptography': {
+        'version': '1.4',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             'cryptography', 'cryptography-1.4.tar.gz')
     },
     'cv2': {
         'version': '3.1.0',
@@ -45,24 +55,14 @@ lambda_packages = {
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                              'PyNaCl', 'PyNaCl-1.0.1.tar.gz')
     },
-    'cryptography': {
-        'version': '1.4',
-        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                             'cryptography', 'cryptography-1.4.tar.gz')
-    },
-    'regex': {
-        'version': '2016.8.27',
-        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                             'regex', 'regex-2016.8.27.tar.gz')
-    },
     'pyproj': {
         'version': '1.9.5',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                              'pyproj', 'pyproj.4-4.9.2.tar.gz')
     },
-    'bcrypt': {
-        'version': '3.1.1',
+    'regex': {
+        'version': '2016.8.27',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                             'bcrypt', 'bcrypt-3.1.1.tar.gz')
+                             'regex', 'regex-2016.8.27.tar.gz')
     }
 }
