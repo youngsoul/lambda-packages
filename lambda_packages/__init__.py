@@ -67,6 +67,11 @@ lambda_packages = {
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                             'pyproj', 'pyproj.4-4.9.2.tar.gz')
     },
+    'python-ldap': {
+        'version': '2.4.29',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            'python-ldap', 'python-ldap-2.4.29.tar.gz')
+    },
     'regex': {
         'version': '2016.8.27',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
