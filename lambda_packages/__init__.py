@@ -76,5 +76,10 @@ lambda_packages = {
         'version': '2016.8.27',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                             'regex', 'regex-2016.8.27.tar.gz')
+    },
+    'datrie': {
+        'version': '0.7.2',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            'datrie', 'datrie-0.7.2.tar.gz')
     }
 }
