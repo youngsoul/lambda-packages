@@ -12,6 +12,7 @@ Currently includes support for:
 * bcrypt
 * cffi
 * cryptography
+* datrie 
 * LXML
 * misaka
 * MySQL-Python
