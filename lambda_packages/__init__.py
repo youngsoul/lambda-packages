@@ -22,6 +22,11 @@ lambda_packages = {
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                             'OpenCV', 'OpenCV-3.1.0.tar.gz')
     },
+    'datrie': {
+        'version': '0.7.2',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            'datrie', 'datrie-0.7.2.tar.gz')
+    },
     'lxml': {
         'version': '3.6.0',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
@@ -76,10 +81,5 @@ lambda_packages = {
         'version': '2016.8.27',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                             'regex', 'regex-2016.8.27.tar.gz')
-    },
-    'datrie': {
-        'version': '0.7.2',
-        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                            'datrie', 'datrie-0.7.2.tar.gz')
     }
 }
