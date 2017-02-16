@@ -24,6 +24,7 @@ Currently includes support for:
 * PyNaCl
 * pyproj
 * python-ldap
+* python-Levenshtein
 * regex
 
 This project is intended for use by [Zappa](https://github.com/Miserlou/Zappa), but could also be used by any Python/Lambda project.
