@@ -77,6 +77,11 @@ lambda_packages = {
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                             'python-ldap', 'python-ldap-2.4.29.tar.gz')
     },
+    'python-Levenshtein': {
+        'version': '0.12.0',
+        'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            'python-Levenshtein', 'python-Levenshtein-0.12.0.tar.gz')
+    },
     'regex': {
         'version': '2016.8.27',
         'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
