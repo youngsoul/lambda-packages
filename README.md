@@ -3,7 +3,7 @@
 # lambda-packages
 [![Build Status](https://travis-ci.org/Miserlou/lambda-packages.svg)](https://travis-ci.org/Miserlou/lambda-packages)
 [![PyPI](https://img.shields.io/pypi/v/lambda-packages.svg)](https://pypi.python.org/pypi/lambda-packages)
-[![Slack](https://img.shields.io/badge/chat-slack-ff69b4.svg)](https://slackautoinviter.herokuapp.com/)
+[![Slack](https://img.shields.io/badge/chat-slack-ff69b4.svg)](https://slack.zappa.io)
 
 Various popular libraries, pre-compiled to be compatible with AWS Lambda.
 
@@ -62,3 +62,19 @@ Useful targets include:
 * pandas
 * scipy
 * [scikit-learn](https://serverlesscode.com/post/deploy-scikitlearn-on-lamba/)
+
+## Support / Development / Training / Consulting
+
+Do you need help with..
+
+  * Porting existing Python applications to AWS Lambda?
+  * Building new applications and services that scale infinitely?
+  * Reducing your operations and hosting costs?
+  * Training your team to use AWS and other server-less paradigms?
+
+Good news! We're currently available for remote and on-site consulting for small, large and enterprise teams. Please contact <miserlou@gmail.com> with your needs and let's work together!
+
+<br />
+<p align="center">
+  <a href="https://gun.io"><img src="http://i.imgur.com/M7wJipR.png" alt="Made by Gun.io"/></a>
+</p>
