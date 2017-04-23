@@ -7,5 +7,5 @@ def test_packages():
         assert_true(os.path.exists(details['path']))
         assert_true(os.path.exists(details['python2.7-path']))
 
-        if 'python3.6' in details:
+        if 'python3.6-path' in details:
             assert_true(os.path.exists(details['python3.6-path']))
