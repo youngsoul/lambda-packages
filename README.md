@@ -64,11 +64,9 @@ To add support for more packages, send a pull request containing a gzipped tarba
 
 You may find the [build.sh script](https://github.com/Miserlou/lambda-packages/blob/master/lambda_packages/cryptography/build.sh) useful as a starting point.
 
-Useful targets include:
+Useful targets which don't have manylinux wheels versions include:
 
 * MongoEngine
-* scipy
-* [scikit-learn](https://serverlesscode.com/post/deploy-scikitlearn-on-lamba/)
 
 ## Support / Development / Training / Consulting
 
