@@ -44,10 +44,14 @@ But, if you want to use this project the other (wrong) way, just put the content
 ```python
 from lambda_packages import lambda_packages
 
-print lambda_packages['psycopg2']['version']
-# 2.6.1
-print lambda_packages['psycopg2']['python2.7-path']
-# /home/YourUsername/.venvs/lambda_packages/psycopg2/python2.7-psycopg2-2.6.1.tar.gz
+print lambda_packages['psycopg2']
+
+#{
+#    'python2.7': {
+#        'version': '2.6.1',
+#        'path': '<absolute-local-path>/lambda_packages/psycopg2/python2.7-psycopg2-2.6.1.tar.gz'
+#    }
+#}
 ```
 
 ## Contributing
