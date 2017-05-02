@@ -7,7 +7,7 @@
 
 Various popular libraries, pre-compiled to be compatible with AWS Lambda.
 
-Currently includes support for:
+Currently includes (at least Python 2.7) support for:
 
 * bcrypt
 * cffi
@@ -44,24 +44,33 @@ But, if you want to use this project the other (wrong) way, just put the content
 ```python
 from lambda_packages import lambda_packages
 
-print lambda_packages['psycopg2']['version']
-# 2.6.1
-print lambda_packages['psycopg2']['path']
-# /home/YourUsername/.venvs/lambda_packages/psycopg2/psycopg2-2.6.1.tar.gz
+print lambda_packages['psycopg2']
+
+#{
+#    'python2.7': {
+#        'version': '2.6.1',
+#        'path': '<absolute-local-path>/lambda_packages/psycopg2/python2.7-psycopg2-2.6.1.tar.gz'
+#    }
+#}
 ```
 
 ## Contributing
 
-To add support for more packages, send a pull request containing a gzipped tarball of the package (build on Amazon Linux and tested on AWS Lambda) in the appropriate directory, an updated manifest, and deterministic build instructions for creating the archive.
+### Before you submit a new package or runtime check if it has a manylinux wheels version in PyPi
+
+Using manylinux wheels should be the preferred way to get pre-compiled packages into your Lambda deployment. In fact this is what Zappa does if it can't find the package here. So before you do any work to submit a new package, please check if it has a manylinux wheels version via http://pythonwheels.com/ and https://pypi.python.org/. In PyPi look for files ending with `cp27-cp27mu-manylinux1_x86_64.whl` and `cp36-cp36m-manylinux1_x86_64.whl` for your package.
+
+e.g. https://pypi.python.org/packages/36/03/e2b03f747595905a9e28f3cb0adee516f2a409aeeea7f15d4af22f029b3e/pandas-0.20.0rc1-cp36-cp36m-manylinux1_x86_64.whl
+
+### No manylinux wheels version or it is not working with Lambda for some reason?
+
+To add support for more packages, send a pull request containing a gzipped tarball of the package (built on Amazon Linux and tested on AWS Lambda) in the appropriate directory, an updated manifest, and deterministic build instructions for creating the archive.
 
 You may find the [build.sh script](https://github.com/Miserlou/lambda-packages/blob/master/lambda_packages/cryptography/build.sh) useful as a starting point.
 
-Useful targets include:
+Useful targets which don't have manylinux wheels versions include:
 
 * MongoEngine
-* pandas
-* scipy
-* [scikit-learn](https://serverlesscode.com/post/deploy-scikitlearn-on-lamba/)
 
 ## Support / Development / Training / Consulting
 
