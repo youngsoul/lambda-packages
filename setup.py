@@ -16,7 +16,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='lambda_packages',
-    version='0.14.2',
+    version='0.15.0',
     packages=['lambda_packages'],
     include_package_data=True,
     license='MIT License',
