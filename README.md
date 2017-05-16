@@ -62,6 +62,8 @@ You may find the [build.sh script](https://github.com/Miserlou/lambda-packages/b
 
 Before contributing, you should also make sure that there is no `manylinux` wheel on PyPI for your package, as Zappa will automatically use those in addition to `lambda-packages`.
 
+You may also be interested in [this guide on deploying with Zappa and Docker](https://blog.zappa.io/posts/simplified-aws-lambda-deployments-with-docker-and-zappa).
+
 Useful targets which don't have manylinux wheels versions include:
 
 * MongoEngine
