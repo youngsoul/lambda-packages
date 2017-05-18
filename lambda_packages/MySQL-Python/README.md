@@ -1,6 +1,6 @@
 # MySQL-Python
 
-Built from MySQL-Python 1.2.6 from pip and MySQL from yum on EC2 Linux.
+Built from MySQL-Python 1.2.5 from pip and MySQL from yum on EC2 Linux.
 
 Build instructions [via Sean Hull](http://www.iheavy.com/2016/02/14/getting-errors-building-amazon-lambda-python-functions-help-howto/):
 
