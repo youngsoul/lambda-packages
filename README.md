@@ -26,6 +26,7 @@ Currently includes (at least Python 2.7) support for:
 * python-ldap
 * python-Levenshtein
 * regex
+* xmlsec
 
 This project is intended for use by [Zappa](https://github.com/Miserlou/Zappa), but could also be used by any Python/Lambda project.
 
