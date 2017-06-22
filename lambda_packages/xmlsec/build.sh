@@ -2,7 +2,8 @@
 
 PACKAGE=${1}
 VERSION=${2}
-TMP_DIR="${PACKAGE}_${VERSION}"
+RUNTIME=${3:-python2.7}
+TMP_DIR="${RUNTIME}_${PACKAGE}_${VERSION}"
 
 mkdir ${TMP_DIR}
 cd  ${TMP_DIR}
@@ -20,7 +21,7 @@ sudo yum install -y gcc libxml2-devel xmlsec1-devel xmlsec1-openssl-devel libtoo
 ENV="env-${PACKAGE}-${VERSION}"
 
 echo "make ${ENV}"
-virtualenv "${ENV}"
+virtualenv "${ENV}" --python=${RUNTIME}
 
 echo "activate env in `pwd`"
 source "${ENV}/bin/activate"
@@ -38,5 +39,5 @@ deactivate
 cp `rpm -ql xmlsec1 | grep "libxmlsec1.so.1$"` ${TARGET_DIR}
 cp `rpm -ql xmlsec1-openssl | grep "libxmlsec1-openssl.so$"` ${TARGET_DIR}
 
-cd ${TARGET_DIR} && tar -zcvf ../../../${PACKAGE}-${VERSION}.tar.gz * && cd ../../..
+cd ${TARGET_DIR} && tar -zcvf ../../../${RUNTIME}-${PACKAGE}-${VERSION}.tar.gz * && cd ../../..
 rm -rf ${TMP_DIR}

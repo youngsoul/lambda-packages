@@ -131,6 +131,11 @@ lambda_packages = {
             'version': '1.0.9',
             'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                  'xmlsec', 'python2.7-xmlsec-1.0.9.tar.gz')
+        },
+        'python3.6': {
+            'version': '1.0.9',
+            'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                 'xmlsec', 'python3.6-xmlsec-1.0.9.tar.gz')
         }
     }
 }
