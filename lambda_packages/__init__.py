@@ -18,9 +18,9 @@ lambda_packages = {
     },
     'cryptography': {
         'python2.7': {
-            'version': '1.8.1',
+            'version': '1.9',
             'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                 'cryptography', 'python2.7-cryptography-1.8.1.tar.gz')
+                                 'cryptography', 'python2.7-cryptography-1.9.tar.gz')
         },
         'python3.6': {
             'version': '1.9',
