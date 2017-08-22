@@ -33,7 +33,12 @@ lambda_packages = {
             'version': '3.1.0',
             'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                  'OpenCV', 'python2.7-OpenCV-3.1.0.tar.gz')
-        }
+        },
+		'python3.6': {
+			'version': '3.3.0',
+			'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                 'OpenCV', 'python3.6-OpenCV-3.3.0.tar.gz')
+		}
     },
     'datrie_extended': {
         'python2.7': {
