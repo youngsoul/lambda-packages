@@ -13,7 +13,7 @@ sudo yum update -y
 
 sudo yum groupinstall -y "Development Tools"
 
-echo "do dependcy install"
+echo "do dependency install"
 
 sudo yum install -y gcc libffi-devel python-devel
 

@@ -14,7 +14,7 @@ sudo yum update -y
 
 sudo yum groupinstall -y "Development Tools"
 
-echo "do dependcy install"
+echo "do dependency install"
 
 sudo yum install -y gcc libxml2-devel xmlsec1-devel xmlsec1-openssl-devel libtool-ltdl-devel
 
