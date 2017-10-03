@@ -10,7 +10,7 @@ region="<YOUR REGION>"
 echo "do update"
 yum update -y
 
-echo "do dependcy install"
+echo "do dependency install"
 yum install -y \
 	gcc \
 	libtiff-devel \
