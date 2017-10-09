@@ -101,7 +101,19 @@ lambda_packages = {
                                  'pycrypto', 'python3.6-pycrypto-2.6.1.tar.gz')
         }
     },
-    'pynacl': {
+    'pylibmc': {
+        'python2.7': {
+            'version': '1.5.2',
+            'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                 'pylibmc', 'python2.7-pylibmc-1.5.2.tar.gz')
+        },
+        'python3.6': {
+            'version': '1.5.2',
+            'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                 'pylibmc', 'python3.6-pylibmc-1.5.2.tar.gz')
+        }
+    },
+     'pynacl': {
         'python2.7': {
             'version': '1.0.1',
             'path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
