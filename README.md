@@ -16,6 +16,7 @@ Currently includes (at least Python 2.7) support for:
 * LXML
 * misaka
 * MySQL-Python
+* mysqlclient
 * numpy
 * OpenCV
 * Pillow (PIL)
