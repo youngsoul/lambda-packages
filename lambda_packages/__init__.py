@@ -42,6 +42,16 @@ lambda_packages = {
             'path': os.path.join(PACKAGES_DIR, 'datrie_extended', 'python2.7-datrie_extended-0.7.3.tar.gz')
         }
     },
+    'dlib': {
+        'python2.7': {
+            'version': '19.8.0',
+            'path': os.path.join(PACKAGES_DIR, 'dlib', 'python2.7-dlib-19.8.tar.gz')
+        },
+        'python3.6': {
+            'version': '19.8.0',
+            'path': os.path.join(PACKAGES_DIR, 'dlib', 'python3.6-dlib-19.8.tar.gz')
+        }
+    },
     'lxml': {
         'python2.7': {
             'version': '3.6.0',
