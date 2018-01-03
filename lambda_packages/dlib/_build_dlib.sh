@@ -145,7 +145,7 @@ function package_dlib {
 function test_dlib {
     echo "Testing Dlib."
 
-    PYTHONPATH=$BASE_PATH python "${BASE_PATH}/test/test_dlib.py"
+    PYTHONPATH=$BASE_PATH:$PYTHONPATH python "${BASE_PATH}/test/test_dlib.py"
     
     if [ ! $? -eq 0 ]; then
         echo "Tests failing. Not creating archive."
