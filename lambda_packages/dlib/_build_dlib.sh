@@ -112,8 +112,8 @@ function build_dlib {
 
     cmake -DPYTHON3:BOOL=$PYTHON3_BOOL \
           -DBOOST_ROOT=/app/_build/boost_1_${BOOST_MINOR_VERSION}_0 \
-	  -DBOOST_LIBRARYDIR=$BOOST_PYTHON_DIR/lib \
-	  -D USE_SSE4_INSTRUCTIONS:BOOL=ON ../tools/python
+          -DBOOST_LIBRARYDIR=$BOOST_PYTHON_DIR/lib \
+          -DUSE_SSE4_INSTRUCTIONS:BOOL=ON ../tools/python
     cmake --build . --config Release --target install
 }
 
