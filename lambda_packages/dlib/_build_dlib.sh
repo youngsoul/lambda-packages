@@ -76,6 +76,11 @@ function build_boost_python {
     if [ ! -d "$BOOST_PYTHON_DIR" ]; then
         mkdir $BOOST_PYTHON_DIR
     fi
+
+    # Hack to work around https://svn.boost.org/trac10/ticket/11120#comment:21
+    if [[ $PYTHON_LIBRARY_DIR == *m ]]; then
+        ln -s ${PYTHON_LIBRARY_DIR} ${PYTHON_LIBRARY_DIR%?}
+    fi
     
     CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:$PYTHON_LIBRARY_DIR"
     
