@@ -17,9 +17,15 @@ PYTHON_VERSION=$(python -c "import sys;t='{v[0]}.{v[1]}'.format(v=list(sys.versi
 BOOST_PYTHON_DIR="$BUILD_PATH/boost_python${PYTHON_VERSION}"
 
 # Lambda docker puts Python libraries in a weird place.
-PYTHON_LIBRARY_DIR="/var/lang/include/python${PYTHON_VERSION}m"
+if [ $PYTHON_VERSION = 3* ]; then
+    PYTHON_LIBRARY_DIR="/var/lang/include/python${PYTHON_VERSION}m"
+else
+    PYTHON_LIBRARY_DIR="/usr/include/python2.7"
+fi
 
 function install_deps {
+    echo "Installing dependancies."
+
     pip install numpy scikit-image
     # Have to run it twice to ensure it always works.
     for run in {1..2}
@@ -32,12 +38,16 @@ function install_deps {
 }
 
 function create_build_path {
+    echo "Creating build path."
+
     if [ ! -d "$BUILD_PATH" ]; then
         mkdir "$BUILD_PATH"
     fi
 }
 
 function install_patchelf {
+    echo "Configuring Patchelf."
+
     if [  -f "$BUILD_PATH/patchelf-0.8.tar.gz" ]; then
         wget --no-check-certificate -P "$BUILD_PATH" http://flydata-rpm.s3-website-us-east-1.amazonaws.com/patchelf-0.8.tar.gz
         tar xxvf "$BUILD_PATH/patchelf-0.8.tar.gz" -C "$BUILD_PATH"
@@ -52,6 +62,8 @@ function build_boost_python {
         return
     fi
 
+    echo "Building Boost.Python."
+
     if [ ! -f "$BUILD_PATH/boost_1_${BOOST_MINOR_VERSION}_0.tar.bz2" ]; then
         wget --no-check-certificate -P "$BUILD_PATH" \
              https://dl.bintray.com/boostorg/release/1.${BOOST_MINOR_VERSION}.0/source/boost_1_${BOOST_MINOR_VERSION}_0.tar.bz2
@@ -61,8 +73,9 @@ function build_boost_python {
         tar xvf "$BUILD_PATH/boost_1_${BOOST_MINOR_VERSION}_0.tar.bz2" -C "$BUILD_PATH"
     fi
     
-    echo "Compiling Boost Python."
-    mkdir $BOOST_PYTHON_DIR
+    if [ ! -d "$BOOST_PYTHON_DIR" ]; then
+        mkdir $BOOST_PYTHON_DIR
+    fi
     
     CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:$PYTHON_LIBRARY_DIR"
     
@@ -72,40 +85,48 @@ function build_boost_python {
 }
 
 function build_dlib {
-    if [ ! -d "$BUILD_PATH/dlib" ]; then
-        cd  "$BUILD_PATH" && git clone https://github.com/davisking/dlib.git
+    echo "Building Dlib."
+
+    if [ ! -d "${BUILD_PATH}/dlib" ]; then
+        cd  "${BUILD_PATH}" && git clone https://github.com/davisking/dlib.git
     fi
     
-    cd "$BUILD_PATH/dlib"
+    cd "${BUILD_PATH}/dlib"
     git pull
     git checkout "v${VERSION}"
     
-    if [ ! -d "build" ]; then
-        mkdir "build"
+    if [ -d "${BUILD_PATH}/dlib/build" ]; then
+        rm -r "${BUILD_PATH}/dlib/build"
     fi
+
+    mkdir "${BUILD_PATH}/dlib/build"
     
-    cd build
+    cd "${BUILD_PATH}/dlib/build"
 
     PYTHON3_BOOL="OFF"
-    if [ $PYTHON_VERSION = 3 ]; then
+    if [ $PYTHON_VERSION = 3* ]; then
       PYTHON3_BOOL="ON"
     fi
 
+    CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:$PYTHON_LIBRARY_DIR"
+
     cmake -DPYTHON3:BOOL=$PYTHON3_BOOL \
-	  -DBOOST_ROOT=/app/_build/boost_1_${BOOST_MINOR_VERSION}_0 \
+          -DBOOST_ROOT=/app/_build/boost_1_${BOOST_MINOR_VERSION}_0 \
 	  -DBOOST_LIBRARYDIR=$BOOST_PYTHON_DIR/lib \
 	  -D USE_SSE4_INSTRUCTIONS:BOOL=ON ../tools/python
     cmake --build . --config Release --target install
 }
 
 function package_dlib {
+    echo "Packaging Dlib."
+
     if [ -d "$BASE_PATH/dlib" ]; then
         rm -r $BASE_PATH/dlib
     fi
 
     mkdir $BASE_PATH/dlib
     
-    cp -v $BUILD_PATH/dlib/build/dlib.so $BASE_PATH/dlib/__init__.so
+    cp -v $BUILD_PATH/dlib/python_examples/dlib.so $BASE_PATH/dlib/__init__.so
     cp -v $BOOST_PYTHON_DIR/lib/libboost_python*.so.*.0 $BASE_PATH/dlib/
     
     touch $BASE_PATH/dlib/__init__.py
@@ -117,7 +138,9 @@ function package_dlib {
 }
 
 function test_dlib {
-    python test_dlib.py
+    echo "Testing Dlib."
+
+    PYTHONPATH=$BASE_PATH python "${BASE_PATH}/test/test_dlib.py"
     
     if [ ! $? -eq 0 ]; then
         echo "Tests failing. Not creating archive."
@@ -126,6 +149,8 @@ function test_dlib {
 }
 
 function archive_dlib {
+    echo "Creating archive."
+
      if [ -f "$BASE_PATH/python${PYTHON_VERSION}-dlib-${VERSION}.tar.gz" ]; then
        rm $BASE_PATH/python${PYTHON_VERSION}-dlib-${VERSION}.tar.gz
      fi
