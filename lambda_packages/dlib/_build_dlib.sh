@@ -17,7 +17,7 @@ PYTHON_VERSION=$(python -c "import sys;t='{v[0]}.{v[1]}'.format(v=list(sys.versi
 BOOST_PYTHON_DIR="$BUILD_PATH/boost_python${PYTHON_VERSION}"
 
 # Lambda docker puts Python libraries in a weird place.
-if [ $PYTHON_VERSION = 3* ]; then
+if [[ $PYTHON_VERSION == 3* ]]; then
     PYTHON_LIBRARY_DIR="/var/lang/include/python${PYTHON_VERSION}m"
 else
     PYTHON_LIBRARY_DIR="/usr/include/python2.7"
@@ -104,7 +104,7 @@ function build_dlib {
     cd "${BUILD_PATH}/dlib/build"
 
     PYTHON3_BOOL="OFF"
-    if [ $PYTHON_VERSION = 3* ]; then
+    if [[ $PYTHON_VERSION == 3* ]]; then
       PYTHON3_BOOL="ON"
     fi
 
