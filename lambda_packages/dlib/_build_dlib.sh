@@ -129,23 +129,31 @@ function package_dlib {
         rm -r $BASE_PATH/dlib
     fi
 
+
+    if [ -d "$BASE_PATH/lib" ]; then
+        rm -r $BASE_PATH/lib
+    fi
+
     mkdir $BASE_PATH/dlib
+    mkdir $BASE_PATH/lib
     
-    cp -v $BUILD_PATH/dlib/python_examples/dlib.so $BASE_PATH/dlib/__init__.so
+    cp -v $BUILD_PATH/dlib/build/dlib.so $BASE_PATH/dlib/__init__.so
     cp -v $BOOST_PYTHON_DIR/lib/libboost_python*.so.*.0 $BASE_PATH/dlib/
     
     touch $BASE_PATH/dlib/__init__.py
     patchelf --set-rpath '$ORIGIN' $BASE_PATH/dlib/__init__.so
-    
-    cp -v /usr/lib64/libopenblas.so.0 $BASE_PATH/dlib/
-    cp -v /usr/lib64/libgfortran.so.3 $BASE_PATH/dlib/
-    cp -v /usr/lib64/libquadmath.so.0 $BASE_PATH/dlib/
+
+    cp -v /usr/lib64/libopenblas.so.0 $BASE_PATH/lib/
+    cp -v /usr/lib64/libgfortran.so.3 $BASE_PATH/lib/
+    cp -v /usr/lib64/libquadmath.so.0 $BASE_PATH/lib/
 }
 
 function test_dlib {
     echo "Testing Dlib."
 
-    PYTHONPATH=$BASE_PATH:$PYTHONPATH python "${BASE_PATH}/test/test_dlib.py"
+    LD_LIBRARY_PATH=$BASE_PATH/lib:$LD_LIBRARY_PATH \
+    PYTHONPATH=$BASE_PATH:$PYTHONPATH \
+    python "${BASE_PATH}/test/test_dlib.py"
     
     if [ ! $? -eq 0 ]; then
         echo "Tests failing. Not creating archive."
@@ -160,7 +168,7 @@ function archive_dlib {
        rm $BASE_PATH/python${PYTHON_VERSION}-dlib-${VERSION}.tar.gz
      fi
      
-     cd $BASE_PATH && tar -zcvf python${PYTHON_VERSION}-dlib-${VERSION}.tar.gz dlib
+     cd $BASE_PATH && tar -zcvf python${PYTHON_VERSION}-dlib-${VERSION}.tar.gz dlib lib
 }
 
 create_build_path
