@@ -69,9 +69,11 @@ function build_boost_python {
              https://dl.bintray.com/boostorg/release/1.${BOOST_MINOR_VERSION}.0/source/boost_1_${BOOST_MINOR_VERSION}_0.tar.bz2
     fi
     
-    if [ ! -d "$BUILD_PATH/boost_1_${BOOST_MINOR_VERSION}_0" ]; then
-        tar xvf "$BUILD_PATH/boost_1_${BOOST_MINOR_VERSION}_0.tar.bz2" -C "$BUILD_PATH"
+    if [ -d "$BUILD_PATH/boost_1_${BOOST_MINOR_VERSION}_0" ]; then
+        rm -r "$BUILD_PATH/boost_1_${BOOST_MINOR_VERSION}_0"
     fi
+
+    tar xvf "$BUILD_PATH/boost_1_${BOOST_MINOR_VERSION}_0.tar.bz2" -C "$BUILD_PATH"
     
     if [ ! -d "$BOOST_PYTHON_DIR" ]; then
         mkdir $BOOST_PYTHON_DIR
@@ -98,7 +100,7 @@ function build_dlib {
     
     cd "${BUILD_PATH}/dlib"
     git pull
-    git checkout "v${VERSION}"
+    git checkout -f "v${VERSION}"
     
     if [ -d "${BUILD_PATH}/dlib/build" ]; then
         rm -r "${BUILD_PATH}/dlib/build"
