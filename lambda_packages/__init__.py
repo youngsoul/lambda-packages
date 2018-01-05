@@ -114,6 +114,16 @@ lambda_packages = {
             'path': os.path.join(PACKAGES_DIR, 'PyNaCl', 'python2.7-PyNaCl-1.0.1.tar.gz')
         }
     },
+    'pyodbc': {
+        'python2.7': {
+            'version': '4.0.21',
+            'path': os.path.join(PACKAGES_DIR, 'pyodbc', 'python2.7-pyodbc-4.0.21.tar.gz')
+        },
+        'python3.6': {
+            'version': '4.0.21',
+            'path': os.path.join(PACKAGES_DIR, 'pyodbc', 'python3.6-pyodbc-4.0.21.tar.gz')
+        }
+    },
     'pyproj': {
         'python2.7': {
             'version': '1.9.5',
