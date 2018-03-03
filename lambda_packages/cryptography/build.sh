@@ -13,10 +13,6 @@
 #
 set -e
 
-echo "Starting..."
-find / -name python
-python -V
-
 DOCKER=0
 PY2=1
 PY3=1
