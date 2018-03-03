@@ -66,6 +66,7 @@ function build_package {
     cd  ${TMP_DIR}
 
     echo "install dependencies"
+    ${SUDO} yum install -y yum-plugin-ovl
     ${SUDO} yum update -y
     ${SUDO} yum groupinstall -y "Development Tools"
     ${SUDO} yum install -y libffi libffi-devel openssl openssl-devel
