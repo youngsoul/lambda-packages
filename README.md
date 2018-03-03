@@ -16,6 +16,7 @@ Currently includes (at least Python 2.7) support for:
 * LXML
 * misaka
 * MySQL-Python
+* mysqlclient
 * numpy
 * OpenCV
 * Pillow (PIL)
@@ -26,6 +27,7 @@ Currently includes (at least Python 2.7) support for:
 * python-ldap
 * python-Levenshtein
 * regex
+* SQLite
 * xmlsec
 
 This project is intended for use by [Zappa](https://github.com/Miserlou/Zappa), but could also be used by any Python/Lambda project.
@@ -57,7 +59,7 @@ print lambda_packages['psycopg2']
 
 ## Contributing
 
-To add support for more packages, send a pull request containing a gzipped tarball of the package (built on Amazon Linux and tested on AWS Lambda) in the appropriate directory, an updated manifest, and deterministic build instructions for creating the archive.
+To add support for more packages, send a pull request containing a gzipped tarball (`tar -zcvf <package-name>.tar.gz <list-of-files>`) of the package (built on Amazon Linux and tested on AWS Lambda) in the appropriate directory, an updated manifest, and deterministic build instructions for creating the archive.
 
 You may find the [build.sh script](https://github.com/Miserlou/lambda-packages/blob/master/lambda_packages/cryptography/build.sh) useful as a starting point.
 

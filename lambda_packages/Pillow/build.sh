@@ -12,7 +12,7 @@ region="<YOUR REGION>"
 echo "do update"
 sudo yum update -y
 
-echo "do dependcy install"
+echo "do dependency install"
 sudo yum install -y \
 	gcc \
 	libtiff-devel \
