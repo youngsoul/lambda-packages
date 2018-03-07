@@ -156,6 +156,10 @@ lambda_packages = {
         'python2.7': {
             'version': '2016.8.27',
             'path': os.path.join(PACKAGES_DIR, 'regex', 'python2.7-regex-2016.8.27.tar.gz')
+        },
+        'python3.6': {
+            'version': '2016.8.27',
+            'path': os.path.join(PACKAGES_DIR, 'regex', 'python3.6-regex-2016.8.27.tar.gz')
         }
     },
     'sqlite3': {
