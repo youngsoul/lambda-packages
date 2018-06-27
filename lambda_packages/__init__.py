@@ -142,8 +142,12 @@ lambda_packages = {
     },
     'python-ldap': {
         'python2.7': {
-            'version': '2.4.29',
-            'path': os.path.join(PACKAGES_DIR, 'python-ldap', 'python2.7-python-ldap-2.4.29.tar.gz')
+            'version': '3.0.0',
+            'path': os.path.join(PACKAGES_DIR, 'python-ldap', 'python2.7-python-ldap-3.0.0.tar.gz')
+        },
+        'python3.6': {
+            'version': '3.0.0',
+            'path': os.path.join(PACKAGES_DIR, 'python-ldap', 'python3.6-python-ldap-3.0.0.tar.gz')
         }
     },
     'python-Levenshtein': {
